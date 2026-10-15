@@ -3,855 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Review Hub | Grow Your Online Reputation</title>
-
+<title>Review Hub | Online Reputation Management</title>
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#faf8fc;
-    color:#151515;
-    overflow-x:hidden;
-}
-
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #eee;
-    padding:17px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    color:white;
-    font-size:22px;
-    font-weight:800;
-    padding:12px 24px;
-    border-radius:30px;
-    background:linear-gradient(135deg,#63209d,#ad27d1);
-    box-shadow:0 8px 22px rgba(126,35,170,.25);
-}
-
-nav{
-    display:flex;
-    gap:28px;
-}
-
-nav a{
-    text-decoration:none;
-    color:#333;
-    font-weight:600;
-}
-
-nav a:hover{
-    color:#8425b2;
-}
-
-/* HERO */
-
-.hero{
-    position:relative;
-    min-height:650px;
-    padding:90px 6% 100px;
-    text-align:center;
-    overflow:hidden;
-    background:
-    radial-gradient(circle at 88% 10%,rgba(219,80,238,.45),transparent 30%),
-    radial-gradient(circle at 5% 25%,rgba(120,54,177,.30),transparent 30%),
-    #faf8fc;
-}
-
-.hero:before{
-    content:"";
-    position:absolute;
-    width:420px;
-    height:420px;
-    right:-170px;
-    top:180px;
-    border-radius:50%;
-    background:rgba(218,82,235,.35);
-}
-
-.hero:after{
-    content:"";
-    position:absolute;
-    width:380px;
-    height:380px;
-    left:-190px;
-    bottom:-100px;
-    border-radius:50%;
-    background:rgba(104,48,159,.16);
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:900px;
-    margin:auto;
-}
-
-.badge{
-    display:inline-block;
-    padding:12px 25px;
-    border-radius:12px;
-    background:#eee0f6;
-    color:#78249f;
-    font-size:15px;
-    font-weight:700;
-    margin-bottom:25px;
-}
-
-.hero h1{
-    font-size:64px;
-    line-height:1.05;
-    font-weight:850;
-    letter-spacing:-2px;
-}
-
-.hero h1 span{
-    color:#8626b3;
-}
-
-.hero p{
-    max-width:700px;
-    margin:25px auto;
-    color:#555;
-    font-size:19px;
-    line-height:1.7;
-}
-
-.buttons{
-    margin-top:32px;
-}
-
-.btn{
-    display:inline-block;
-    padding:16px 30px;
-    margin:7px;
-    border-radius:35px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.25s;
-}
-
-.primary{
-    color:white;
-    background:linear-gradient(135deg,#7122a5,#a92bd1);
-    box-shadow:0 10px 25px rgba(126,35,170,.25);
-}
-
-.secondary{
-    color:#7925a5;
-    background:white;
-    border:2px solid #7925a5;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-/* TRUST BAR */
-
-.trust{
-    background:white;
-    padding:24px 6%;
-    display:flex;
-    justify-content:center;
-    gap:45px;
-    flex-wrap:wrap;
-    color:#777;
-    font-weight:700;
-    border-bottom:1px solid #eee;
-}
-
-.trust span{
-    font-size:16px;
-}
-
-/* SECTIONS */
-
-section{
-    padding:80px 6%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title h2{
-    font-size:40px;
-    margin-bottom:12px;
-}
-
-.section-title p{
-    color:#666;
-    font-size:17px;
-}
-
-/* SERVICES */
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-    max-width:1150px;
-    margin:auto;
-}
-
-.card{
-    background:white;
-    border:1px solid #eee;
-    border-radius:22px;
-    padding:32px 25px;
-    text-align:center;
-    box-shadow:0 10px 35px rgba(70,30,90,.07);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(70,30,90,.13);
-}
-
-.card-icon{
-    width:65px;
-    height:65px;
-    margin:0 auto 18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:18px;
-    background:#f2e6f8;
-    font-size:32px;
-}
-
-.card h3{
-    color:#7624a2;
-    margin-bottom:10px;
-    font-size:21px;
-}
-
-.card p{
-    color:#666;
-    line-height:1.6;
-    font-size:15px;
-}
-
-/* DASHBOARD */
-
-.dashboard-section{
-    background:#f2eaf7;
-}
-
-.dashboard{
-    max-width:1000px;
-    margin:auto;
-    padding:28px;
-    border-radius:25px;
-    background:#17121b;
-    color:white;
-    box-shadow:0 20px 50px rgba(60,20,80,.2);
-}
-
-.dashboard-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:28px;
-}
-
-.dashboard-title{
-    font-size:22px;
-    font-weight:bold;
-}
-
-.live{
-    padding:7px 13px;
-    border-radius:20px;
-    background:#213d2b;
-    color:#7df0a2;
-    font-size:12px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.stat{
-    background:#251d2b;
-    border:1px solid #3a3040;
-    padding:22px;
-    border-radius:16px;
-}
-
-.stat small{
-    color:#aaa;
-}
-
-.stat h3{
-    margin-top:8px;
-    font-size:25px;
-}
-
-.green{
-    color:#65e58e;
-}
-
-/* PRICING */
-
-.pricing{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    max-width:1050px;
-    margin:auto;
-}
-
-.price-card{
-    background:white;
-    border-radius:22px;
-    padding:35px 28px;
-    text-align:center;
-    border:1px solid #eee;
-    box-shadow:0 10px 30px rgba(70,30,90,.07);
-}
-
-.price-card.featured{
-    border:2px solid #8b27b7;
-    transform:scale(1.03);
-}
-
-.popular{
-    display:inline-block;
-    background:#8b27b7;
-    color:white;
-    padding:7px 15px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:bold;
-    margin-bottom:15px;
-}
-
-.price-card h3{
-    color:#7523a1;
-    font-size:23px;
-}
-
-.price{
-    font-size:42px;
-    font-weight:800;
-    margin:18px 0;
-}
-
-.price-card ul{
-    list-style:none;
-    text-align:left;
-    line-height:2.1;
-    color:#555;
-    margin-bottom:20px;
-}
-
-/* CTA */
-
-.cta{
-    text-align:center;
-    background:
-    radial-gradient(circle at 20% 20%,#b83ada,transparent 25%),
-    linear-gradient(135deg,#63209a,#a82bd0);
-    color:white;
-}
-
-.cta h2{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.cta p{
-    max-width:650px;
-    margin:auto;
-    line-height:1.7;
-    opacity:.9;
-}
-
-.cta-button{
-    display:inline-block;
-    margin-top:25px;
-    padding:16px 32px;
-    background:white;
-    color:#7523a1;
-    border-radius:35px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* FOOTER */
-
-footer{
-    background:#151018;
-    color:white;
-    text-align:center;
-    padding:30px 20px;
-}
-
-footer p{
-    color:#aaa;
-    margin-top:8px;
-    font-size:14px;
-}
-
-/* MOBILE */
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#faf7fc;color:#17121b;overflow-x:hidden}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 2px 15px rgba(0,0,0,.08);padding:15px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:28px;font-weight:800;color:#8b20c7}
+nav{display:flex;gap:25px}
+nav a{text-decoration:none;color:#333;font-weight:600}
+.menu{display:none;font-size:28px;cursor:pointer}
+.hero{position:relative;text-align:center;padding:90px 20px 110px;overflow:hidden;background:linear-gradient(135deg,#fff,#f7eaff,#fff)}
+.circle{position:absolute;border-radius:50%;opacity:.45}
+.circle.one{width:450px;height:450px;background:#e8a7ff;right:-150px;top:100px}
+.circle.two{width:350px;height:350px;background:#d9c8e8;left:-170px;bottom:-120px}
+.badge{position:relative;display:inline-block;padding:13px 25px;border-radius:30px;background:#f0dcfa;color:#7622a2;font-weight:bold;margin-bottom:30px}
+.hero h1{position:relative;max-width:850px;margin:auto;font-size:58px;line-height:1.08;font-weight:800}
+.hero h1 span{color:#9224c9}
+.hero p{position:relative;max-width:720px;margin:30px auto;font-size:20px;line-height:1.7;color:#666}
+.buttons,.contact-buttons{position:relative;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 32px;border-radius:35px;text-decoration:none;font-weight:bold;font-size:17px;transition:.3s}
+.btn-primary{background:linear-gradient(90deg,#8b20c7,#b42bdd);color:white}
+.btn-secondary{border:2px solid #8b20c7;color:#7c20a8;background:white}
+.btn:hover{transform:translateY(-3px)}
+.platforms{background:white;padding:30px 5%;display:flex;justify-content:center;align-items:center;gap:35px;flex-wrap:wrap;font-size:18px;font-weight:bold;color:#666}
+.platforms span{padding:8px}
+section{padding:80px 7%}
+.section-title{text-align:center;font-size:40px;margin-bottom:15px}
+.section-subtitle{text-align:center;color:#777;max-width:700px;margin:0 auto 50px;font-size:18px;line-height:1.6}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:1100px;margin:auto}
+.card{background:white;padding:30px;border-radius:20px;box-shadow:0 5px 25px rgba(80,20,100,.08);border:1px solid #eee;transition:.3s}
+.card:hover{transform:translateY(-7px)}
+.icon{font-size:40px;margin-bottom:18px}
+.card h3{font-size:23px;margin-bottom:12px}
+.card p{color:#666;line-height:1.6}
+.pricing{background:#f5edfa}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:1050px;margin:auto}
+.price-card{background:white;padding:35px;border-radius:22px;text-align:center;box-shadow:0 5px 25px rgba(70,20,90,.1)}
+.price-card.featured{border:3px solid #9628ca;transform:scale(1.03)}
+.price-card h3{font-size:25px;margin-bottom:15px}
+.price{font-size:42px;font-weight:800;color:#8c21bd;margin:20px 0}
+.price-card ul{list-style:none;text-align:left;margin:25px 0}
+.price-card li{padding:10px 0;color:#555}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:1050px;margin:auto}
+.why-box{text-align:center;padding:25px}
+.why-box .icon{font-size:45px}
+.contact{background:linear-gradient(135deg,#7620a8,#b42add);color:white;text-align:center}
+.contact .section-subtitle{color:#eee}
+.contact-btn{background:white;color:#7d1eaa;padding:16px 30px;border-radius:30px;text-decoration:none;font-weight:bold}
+.faq{max-width:850px;margin:auto}
+details{background:white;margin:15px 0;padding:20px;border-radius:12px;box-shadow:0 3px 15px rgba(0,0,0,.06)}
+summary{cursor:pointer;font-weight:bold;font-size:18px}
+details p{padding-top:15px;color:#666;line-height:1.6}
+footer{background:#17121b;color:#ddd;text-align:center;padding:35px 20px}
+footer .logo{margin-bottom:10px}
+.whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25D366;color:white;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 5px 20px rgba(0,0,0,.25);z-index:999}
 @media(max-width:800px){
-
-    header{
-        padding:15px 5%;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        padding:70px 5% 85px;
-    }
-
-    .hero h1{
-        font-size:43px;
-        letter-spacing:-1px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    section{
-        padding:65px 5%;
-    }
-
-    .section-title h2{
-        font-size:31px;
-    }
-
-    .services{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .pricing{
-        grid-template-columns:1fr;
-    }
-
-    .price-card.featured{
-        transform:none;
-    }
-
-    .cta h2{
-        font-size:32px;
-    }
-
-    .trust{
-        gap:20px;
-    }
-}
-
-@media(max-width:450px){
-
-    .logo{
-        font-size:19px;
-        padding:10px 18px;
-    }
-
-    .hero h1{
-        font-size:37px;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .dashboard{
-        padding:20px;
-    }
+header{padding:14px 5%}
+nav{display:none;position:absolute;top:65px;left:0;width:100%;background:white;flex-direction:column;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,.1)}
+nav.active{display:flex}.menu{display:block}
+.hero{padding:70px 18px 90px}.hero h1{font-size:40px}.hero p{font-size:17px}
+.services,.price-grid,.why{grid-template-columns:1fr}
+.price-card.featured{transform:none}.section-title{font-size:32px}section{padding:60px 5%}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-
-    <div class="logo">
-        Review Hub
-    </div>
-
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
+<div class="logo">Review Hub</div>
+<div class="menu" onclick="toggleMenu()">☰</div>
+<nav id="nav">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</nav>
 </header>
 
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="badge">
-            ⭐ Professional Review Management
-        </div>
-
-        <h1>
-            Grow Your Business With
-            <span>Better Reviews</span>
-        </h1>
-
-        <p>
-            Review Hub helps businesses collect genuine customer feedback,
-            organize review requests and build a stronger online reputation.
-        </p>
-
-        <div class="buttons">
-
-            <a href="#services" class="btn primary">
-                Get More Reviews ⭐
-            </a>
-
-            <a href="#contact" class="btn secondary">
-                Contact Us
-            </a>
-
-        </div>
-
-    </div>
-
+<section class="hero" id="home">
+<div class="circle one"></div><div class="circle two"></div>
+<div class="badge">⭐ Professional Review Management</div>
+<h1>Grow Your Business<br>With <span>Better Reviews</span></h1>
+<p>Review Hub helps businesses collect genuine customer feedback, organize review requests and build a stronger online reputation.</p>
+<div class="buttons">
+<a href="#services" class="btn btn-primary">Get Started ⭐</a>
+<a href="#contact" class="btn btn-secondary">Contact Us</a>
+</div>
 </section>
 
-
-<!-- TRUST -->
-
-<div class="trust">
-
-    <span>⭐ Google</span>
-    <span>🟢 Trustpilot</span>
-    <span>✈️ Tripadvisor</span>
-    <span>💬 Yelp</span>
-    <span>🏢 BBB</span>
-    <span>🏠 Home Services</span>
-
+<div class="platforms">
+<span>⭐ Google</span><span>🟢 Trustpilot</span><span>✈️ Tripadvisor</span><span>💬 Yelp</span><span>🏢 BBB</span><span>🏠 Home Services</span>
 </div>
 
-
-<!-- SERVICES -->
-
 <section id="services">
-
-    <div class="section-title">
-
-        <h2>Our Review Services</h2>
-
-        <p>
-            Simple tools to help your business collect and manage genuine feedback.
-        </p>
-
-    </div>
-
-
-    <div class="services">
-
-        <div class="card">
-
-            <div class="card-icon">⭐</div>
-
-            <h3>Google Reviews</h3>
-
-            <p>
-                Create easy review-request links for your genuine customers
-                and make feedback collection simple.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🟢</div>
-
-            <h3>Trustpilot</h3>
-
-            <p>
-                Organize customer feedback requests and keep your review
-                workflow in one place.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">✈️</div>
-
-            <h3>Tripadvisor</h3>
-
-            <p>
-                Help real customers easily find the correct place
-                to share their experience.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">💬</div>
-
-            <h3>Yelp</h3>
-
-            <p>
-                Build a simple customer feedback process for your
-                local business.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🏢</div>
-
-            <h3>BBB</h3>
-
-            <p>
-                Manage your business reputation workflow
-                professionally.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🏠</div>
-
-            <h3>Home Services</h3>
-
-            <p>
-                Create review-request campaigns for contractors
-                and home service businesses.
-            </p>
-
-        </div>
-
-    </div>
-
+<h2 class="section-title">Our Services</h2>
+<p class="section-subtitle">Professional reputation and customer-feedback solutions for businesses of different sizes.</p>
+<div class="services">
+<div class="card"><div class="icon">⭐</div><h3>Google Reviews</h3><p>Help your customers easily find your business review page and share genuine feedback.</p></div>
+<div class="card"><div class="icon">🟢</div><h3>Trustpilot</h3><p>Organize customer feedback campaigns and improve your online reputation workflow.</p></div>
+<div class="card"><div class="icon">✈️</div><h3>Tripadvisor</h3><p>Make it easier for genuine customers to share their experiences with your business.</p></div>
+<div class="card"><div class="icon">💬</div><h3>Yelp</h3><p>Create a simple customer-review request process for eligible businesses.</p></div>
+<div class="card"><div class="icon">🏢</div><h3>BBB Reputation</h3><p>Organize customer communication and reputation-management activities.</p></div>
+<div class="card"><div class="icon">🏠</div><h3>Home Services</h3><p>Review-request solutions for contractors, repair services and local businesses.</p></div>
+</div>
 </section>
 
-
-<!-- DASHBOARD -->
-
-<section class="dashboard-section" id="dashboard">
-
-    <div class="section-title">
-
-        <h2>Simple Review Dashboard</h2>
-
-        <p>
-            Keep your review activity organized in one place.
-        </p>
-
-    </div>
-
-
-    <div class="dashboard">
-
-        <div class="dashboard-top">
-
-            <div class="dashboard-title">
-                Review Hub Analytics
-            </div>
-
-            <div class="live">
-                ● LIVE
-            </div>
-
-        </div>
-
-
-        <div class="stats">
-
-            <div class="stat">
-                <small>Review Requests</small>
-                <h3>1,248</h3>
-            </div>
-
-            <div class="stat">
-                <small>Customer Responses</small>
-                <h3>864</h3>
-            </div>
-
-            <div class="stat">
-                <small>Response Rate</small>
-                <h3 class="green">69%</h3>
-            </div>
-
-            <div class="stat">
-                <small>Average Rating</small>
-                <h3>4.8 ⭐</h3>
-            </div>
-
-        </div>
-
-    </div>
-
+<section class="pricing" id="pricing">
+<h2 class="section-title">Simple Pricing</h2>
+<p class="section-subtitle">Choose a plan that fits your business needs.</p>
+<div class="price-grid">
+<div class="price-card"><h3>Starter</h3><div class="price">$49</div><ul><li>✓ Review request setup</li><li>✓ Customer feedback strategy</li><li>✓ Basic reputation guidance</li><li>✓ Email support</li></ul><a href="#contact" class="btn btn-primary">Get Started</a></div>
+<div class="price-card featured"><h3>Professional</h3><div class="price">$99</div><ul><li>✓ Everything in Starter</li><li>✓ Multi-platform strategy</li><li>✓ Review-request templates</li><li>✓ Reputation reporting</li><li>✓ Priority support</li></ul><a href="#contact" class="btn btn-primary">Choose Plan</a></div>
+<div class="price-card"><h3>Business</h3><div class="price">$199</div><ul><li>✓ Everything in Professional</li><li>✓ Multiple locations</li><li>✓ Advanced reporting</li><li>✓ Custom strategy</li><li>✓ Dedicated support</li></ul><a href="#contact" class="btn btn-primary">Contact Us</a></div>
+</div>
 </section>
 
-
-<!-- PRICING -->
-
-<section id="pricing">
-
-    <div class="section-title">
-
-        <h2>Simple Pricing</h2>
-
-        <p>
-            Choose a plan that works for your business.
-        </p>
-
-    </div>
-
-
-    <div class="pricing">
-
-        <div class="price-card">
-
-            <h3>Starter</h3>
-
-            <div class="price">
-                $29
-            </div>
-
-            <ul>
-                <li>✓ Review request system</li>
-                <li>✓ Review links</li>
-                <li>✓ Basic support</li>
-                <li>✓ One business</li>
-            </ul>
-
-            <a href="#contact" class="btn primary">
-                Get Started
-            </a>
-
-        </div>
-
-
-        <div class="price-card featured">
-
-            <div class="popular">
-                MOST POPULAR
-            </div>
-
-            <h3>Professional</h3>
-
-            <div class="price">
-                $59
-            </div>
-
-            <ul>
-                <li>✓ Multi-platform links</li>
-                <li>✓ Review management</li>
-                <li>✓ Customer dashboard</li>
-                <li>✓ Priority support</li>
-            </ul>
-
-            <a href="#contact" class="btn primary">
-                Get Started
-            </a>
-
-        </div>
-
-
-        <div class="price-card">
-
-            <h3>Business</h3>
-
-            <div class="price">
-                $99
-            </div>
-
-            <ul>
-                <li>✓ Advanced dashboard</li>
-                <li>✓ Multiple businesses</li>
-                <li>✓ Campaign management</li>
-                <li>✓ Priority support</li>
-            </ul>
-
-            <a href="#contact" class="btn primary">
-                Get Started
-            </a>
-
-        </div>
-
-    </div>
-
+<section>
+<h2 class="section-title">Why Choose Review Hub?</h2>
+<p class="section-subtitle">Simple tools and professional support to help businesses manage their online reputation.</p>
+<div class="why">
+<div class="why-box"><div class="icon">🔒</div><h3>Professional</h3><p>Clear and professional review-management solutions.</p></div>
+<div class="why-box"><div class="icon">📊</div><h3>Reporting</h3><p>Track your review-request and feedback activities.</p></div>
+<div class="why-box"><div class="icon">⚡</div><h3>Fast Support</h3><p>Get quick assistance whenever you need help.</p></div>
+</div>
 </section>
 
-
-<!-- CTA -->
-
-<section class="cta" id="contact">
-
-    <h2>Ready to Grow Your Reputation?</h2>
-
-    <p>
-        Make it easier for your genuine customers to share their
-        experiences with your business.
-    </p>
-
-    <a
-        class="cta-button"
-        href="mailto:your@email.com">
-        Contact Review Hub
-    </a>
-
+<section id="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq">
+<details><summary>What does Review Hub do?</summary><p>We help businesses organize genuine customer feedback, review requests and online reputation-management activities.</p></details>
+<details><summary>Do you provide fake reviews?</summary><p>No. Our service is designed around genuine customer feedback and compliant review-request practices.</p></details>
+<details><summary>Which platforms do you support?</summary><p>We can help businesses with review-management workflows for platforms such as Google, Trustpilot, Tripadvisor, Yelp and other relevant platforms.</p></details>
+<details><summary>How can I contact you?</summary><p>You can contact us through WhatsApp or email using the contact options below.</p></details>
+</div>
 </section>
 
-
-<!-- FOOTER -->
+<section class="contact" id="contact">
+<h2 class="section-title">Let's Work Together</h2>
+<p class="section-subtitle">Ready to improve your customer-feedback process? Contact us today.</p>
+<div class="contact-buttons">
+<a class="contact-btn" href="https://wa.me/8801617519054?text=Hello%20Review%20Hub%2C%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank">💬 WhatsApp</a>
+<a class="contact-btn" href="mailto:limuasha01@gmail.com">📧 Email Us</a>
+</div>
+</section>
 
 <footer>
-
-    <strong>Review Hub</strong>
-
-    <p>
-        © 2026 Review Hub. Review management platform.
-    </p>
-
+<div class="logo">Review Hub</div>
+<p>Professional Review & Reputation Management</p><br>
+<p>© 2026 Review Hub. All rights reserved.</p>
+<p style="margin-top:12px"><a href="mailto:limuasha01@gmail.com" style="color:#ddd">limuasha01@gmail.com</a></p>
 </footer>
 
+<a class="whatsapp" href="https://wa.me/8801617519054?text=Hello%20Review%20Hub%2C%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank">💬</a>
+
+<script>
+function toggleMenu(){document.getElementById("nav").classList.toggle("active")}
+</script>
 </body>
 </html>
