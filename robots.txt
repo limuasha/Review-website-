@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://limuasha.github.io/Review-website-/sitemap.xml
